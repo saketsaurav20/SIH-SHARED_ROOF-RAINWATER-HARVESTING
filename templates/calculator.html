@@ -1,0 +1,239 @@
+{% extends "template.html" %}
+{% block content %}
+<style type="text/css">
+	.coeff {
+		align-self: center;
+		margin-left: 260px;
+	}
+	.coeff1 {
+		align-self: center;
+		margin-left: 0px;
+	}
+	.coeff2 {
+		align-self: center;
+		margin-left: 00px;
+	}
+</style>
+<body>
+	<div class="stage" id="stage">
+
+	  <div class="container py-4 fixed-top app-navbar">
+	  <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
+	    <button
+	      class="navbar-toggler navbar-toggler-right hidden-md-up"
+	      type="button"
+	      data-target="#stage"
+	      data-toggle="stage"
+	      data-distance="-250">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+
+	    <a class="navbar-brand mr-auto" href="">
+
+	      <strong style= "text-decoration-color: white; font-size: 1.5em; padding: 12px; border-radius: 4px">Solarizer</strong>
+	    </a>
+
+	    <div class="hidden-sm-down text-uppercase">
+      		<ul class="navbar-nav">
+        		<li class="nav-item px-1 ">
+          		<a class="nav-link text-secondary" href="{{ url_for('home') }}">Home</a>
+        	</li>
+      		</ul>
+    	</div>
+
+	  </nav>
+	</div>
+
+<br>
+
+<div class="container-fluid col-md-12 text-center">
+				<br>
+				<img src="{{ url_for('static', filename='images/fig1.png') }}">
+				<br><br>
+			</div>
+		<br><br>
+		<section id="first-step" class="step content-100">
+			<div class="container">
+				<h1 class="text-center section-heading">Can you go <mark class='mark-style'>Water positive</mark>?</h1>
+				<hr class="tall">
+				<div class="margin-top25">
+					<div class="row">
+						<img class="coeff" src="{{ url_for('static', filename='images/Coefficient Table.png') }}">
+
+						<div class="col-md-12 area step1">
+
+
+							<div class="right text-center">
+								{% if val == 1: %}
+								<hr><br>
+								<div class="coeff1">
+								    <!-- <title style="margin-left: ">Upload new File</title> -->
+								    <h3>Upload new File</h3>
+								    <br>
+								</div>
+								<div class="coeff2">
+								    <form method=post enctype=multipart/form-data>
+								      <input type=file name=file>
+								      <input type=submit value=Upload>
+								    </form>
+								    <br>
+								</div>
+								<hr>
+							{% endif %}
+
+								<form>
+									<div class="container">
+										<p class="text-dark form-style">Location Scatter: </p>
+										<input id="members" type="number" required value="4" min="1" max="8">
+										<span></span>
+										<br><br>
+									</div>
+									<div class="container">
+										<p class="text-dark form-style">Water Usage Cluster Category: </p>
+										<input id="families" type="number" required value="1" min="1" max="8">
+										<span></span>								<br><br>
+									</div>
+									<!-- <div class="container">
+										<p class="text-dark form-style">Number of CFL bulbs: </p>
+										<input id="householdBDs2" type="number" required value="5" min="1" max="8">
+										<span>Bulbs</span>								<br>
+									</div> -->
+									<br>
+									<!-- <div class="container">
+										<p class="form-style">Desktop PCs </p>
+										<input id="householdBDs3" type="number" required value="2" min="1" max="8">
+										<span>PCs</span>
+									</div> -->
+									<div class="submit-button">
+									<br>
+										<button id="calculate" class="btn"> <a href="#second-step" class="button glow-button">Calculate</a>
+
+									</div>
+
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class='bottom-space'>
+				</div>
+			</div>
+		</section>
+		<br><br>
+		<section id="second-step" class="step content-100">
+			<div class="container">
+				<h1 class="text-center section-heading">What you need to be self-sufficient</h1>
+				<hr class="tall">
+				
+				<p class="text-center section-content">
+					<strong style="font-size: 1.5em;">Based on your location and household size our ML model computes:</strong>
+				</p>
+				
+				
+		
+				<div class="margin-top25">
+					<div class="row">
+						<div class="col-md-12 area step1 text-center">
+							<div class="right">
+								<form id="apply-form">
+									<div class="group has-value">
+										{% if dims %}
+											<strong><p class="form-style">Effective Catchment Area (sqm)</p></strong>
+											<input id="panelSize" type="text" required value="{{ dims }}">
+											<br><br>
+										{% else %}
+											<strong><p class="form-style">Effective Catchment Area (sqm)</p></strong>
+											<input id="panelSize" type="text" required value="{{dims}}">
+											<br><br>
+										{% endif %}
+									</div>
+									<div class="group has-value">
+										<strong><p class="form-style">Predicted Rainfall Volume (l)</p></strong>
+										<input id="predictedRainfall" type="text" required value="">
+
+										<br><br>
+									</div>
+
+									<div class="group has-value">
+									    <strong><p class="form-style">Total investment (INR)</p></strong>
+										<input id="investment" type="text" required value="">
+										<br><br>
+									</div>
+									<div class="group has-value">
+										<strong><p class="form-style">Return of investment from water savings</p></strong>
+										<input id="returnOfInvestment" type="text" required value="">
+										<br><br>
+									</div>
+									<div class="group has-value">
+										<strong><p class="form-style">Tentative Maintenance Cost (Bi-Monthly)</p></strong>
+										<input id="maintenance" type="text" required value="">
+										<br><br>
+									</div>
+									<div class="submit-button">
+										<br>
+										<button class="btn" id="tips"><a class="button glow-button" href="#final">Water Saving Tips</a>
+										</button>
+									</div>
+									<div id="solution">
+
+									</div>
+								</form>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class='bottom-space'>
+					<br>
+					<br>
+				</div>
+			</div>
+		</section>
+	<script>
+		var val = 0;
+	</script>
+	<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+	<script type="text/javascript">
+
+		$('#calculate').click(function(e){
+
+			var mems = $('#members').val();
+			var fams = $('#families').val();
+			console.log(mems);
+			let mult = mems * fams;
+			
+			$('#predictedRainfall').val({{dims}} * 935.12/12);
+			values = {{dims}} * 935.12/12;
+			console.log(values);
+
+			const conversion = 115812*3/(104720/12);
+			$('#investment').val(conversion * values);
+			let invest = conversion * values;
+
+			const roi = mult/4*1.746*(115812*3)/(values*12);
+			$('#returnOfInvestment').val(roi + ' year(s)');
+			
+			$('#maintenance').val(invest * 0.005)
+
+		});
+		btn = document.getElementById("tips");
+		btn.addEventListener("click", function(e){
+
+		if(val <= 2){
+
+			alert("Low power usage! You can use another device.");
+		}
+		else if(val === 3 || val === 4){
+			alert("Mid-range power usage for a humble home!!");
+		}
+		else if(val > 4) {
+			alert("High power usage! Please consume lesser power and save the environment!");
+		}
+
+	});
+	</script>
+   
+</body>
+</html>
+{% endblock content %}
