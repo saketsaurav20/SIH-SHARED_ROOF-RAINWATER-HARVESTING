@@ -36,7 +36,7 @@ Thus, we have opted for the OpenCV approach to accurately detect, estimate and m
   - The contour mapping draws bounding boxes on the roof and outputs the catchment area in the location matrix limit as provided by the user's image.
   - The `Depth Estimation` is computed from the `Digital Elevation Modelling algorithm` that calculates the least elevation point by partitioning the image into boxes and then calculates the local minima of every box. The resulting global minima is considered as the least elevation point for the given area matrix.  
     
-![ALT-IMG](https://github.com/Vishal-V/SIH-RainWater-Harvesting/blob/master/static/images/dem.png)
+![ALT-IMG](https://github.com/saketsaurav20/SIH-SHARED_ROOF-RAINWATER-HARVESTING/blob/master/static/images/dem.png)
  
 - #### 3. Rainfall Prediction
   - The rainfall prediction has been trained on 100 years' data for the city of Bangalore. We have used a time series plot uisng ARIMA models as well as a statistical analysis to obtain the values for various months.
