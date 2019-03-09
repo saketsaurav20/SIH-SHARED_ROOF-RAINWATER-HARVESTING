@@ -40,11 +40,11 @@ Thus, we have opted for the OpenCV approach to accurately detect, estimate and m
  
 - #### 3. Rainfall Prediction
   - The rainfall prediction has been trained on 100 years' data for the city of Bangalore. We have used a time series plot uisng ARIMA models as well as a statistical analysis to obtain the values for various months.
-![ALT](https://github.com/Vishal-V/SIH-RainWater-Harvesting/blob/master/static/images/dash.png)  
+![ALT](https://github.com/saketsaurav20/SIH-SHARED_ROOF-RAINWATER-HARVESTING/blob/master/static/images/dash.png)  
 - #### 4. Calculator (Cost of installation + Break-Even analysis)
   - This is the complete analysis pipeline for the project. It initially starts with the user uploading a satellite image from our Serach bar and the backend Computer Vision models(`OpenCV`) and machine learning models(`K-Means clustering`) calculate the catchment are of the rooftops under consideration.
   - The calculated area is then fed to our moldes to estimate the cost of installation of the entire setup and also finds the maintenance cost as well.
-![ALT](https://github.com/Vishal-V/SIH-RainWater-Harvesting/blob/master/static/images/calc.png)  
+![ALT](https://github.com/saketsaurav20/SIH-SHARED_ROOF-RAINWATER-HARVESTING/blob/master/static/images/calc.png)  
 - #### 5. Non-Drinking Water Usage Research
     - This was a research oriented part of the project to estimate and validate the non-drinking water usage of a certain area that also takes the water usage and lifestyle into account.
     - The papers based on water usage was maonly for domestic purposes and very few for industrial usage. Hence, our end-to-end pipeline is a B2C model rather than a B2B model
