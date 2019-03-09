@@ -51,7 +51,7 @@ Thus, we have opted for the OpenCV approach to accurately detect, estimate and m
   
 - #### 6. Basic Shared Rainwater Harvesting System (Phase 1)
   - This is a fully working model of the Shared Rainwater Harvesting system that has an easy-to-use UI with accurate predictions using AI and Computer Vision models to predict the most optimal spot to detect the location to install the tank and also provides complete financial analysis and break-even time for the installation. Here, you can find the picture of the installation on our college hostel.
-![ALT](https://github.com/saketsaurav20/SIH-SHARED_ROOF-RAINWATER-HARVESTINGg/blob/master/static/images/point.png)
+![ALT](https://github.com/saketsaurav20/SIH-SHARED_ROOF-RAINWATER-HARVESTING/blob/master/static/images/point.png)
 #### 7. Underground Map
   
   The problem of designing the underground map involves many parameters including obstacles beneath the ground a layout of the pipeline from inlet to outlet of the rainwater harvesting solution.  
